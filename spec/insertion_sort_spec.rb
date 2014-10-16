@@ -3,27 +3,23 @@ require 'minitest/spec'
 require 'sort'
 require 'benchmark'
 
-describe Sort do
-  it 'should insertion sort an array on best case' do
+describe Array do
+  it 'should insertion sort an array' do
     array = (1..10_000).to_a.shuffle
-    assert_equal (1..10_000).to_a, Sort.insertion(array)
+    assert_equal (1..10_000).to_a, array.sorts(:insertion)
   end
 
-  it 'should be benchmarked best case' do
+  it 'should be benchmarked' do
     array = (1..10_000).to_a
-    puts 'Best case'
-    puts Benchmark.measure { Sort.insertion(array) }
-  end
+    puts 'Best case - insertion_sort'
+    puts Benchmark.measure { array.sorts(:insertion) }
 
-  it 'should be benchmarked worst case' do
-    array = 10_000.downto(1).to_a
-    puts 'Worst case'
-    puts Benchmark.measure { Sort.insertion(array) }
-  end
+    array = (1..10_000).to_a.reverse
+    puts 'Worst case - insertion_sort'
+    puts Benchmark.measure { array.sorts(:insertion) }
 
-  it 'should be benchmarked random case' do
     array = (1..10_000).to_a.shuffle
-    puts 'Random case'
-    puts Benchmark.measure { Sort.insertion(array) }
+    puts 'Random case - insertion_sort'
+    puts Benchmark.measure { array.sorts(:insertion) }
   end
 end

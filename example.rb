@@ -1,5 +1,5 @@
 class Array
-  def sorts(algo)
+  def sort(algo)
     send(algo)
   end
   
@@ -63,4 +63,5 @@ class Array
     end
     sorted.concat(left).concat(right)
   end
+  
 end
