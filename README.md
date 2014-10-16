@@ -1,6 +1,10 @@
 # README
 This library contains a number of sorting algorithms
 
+
+## Quick Sort
+This sort method picks a pivotal value out of the array. All values left of the pivot must be less than the pivot, while all values right of the pivot must be greater than the pivot. Recursively apply that logic to either side and you have the quick sort algorithm
+
 ## Insertion Sort
 This sort method can be found here (http://en.wikipedia.org/wiki/Insertion_sort)
 Example usage:
