@@ -2,15 +2,15 @@ class Array
   def sorts(algo)
     send(algo)
   end
-  
+
   def quick
     array = *self
     return array if array.size == 1
     pivot = array[-1]
     greater_partition = 0
-    array[0..-2].each_with_index do |num, index|      
+    array[0..-2].each_with_index do |num, index|
       if num <= pivot
-        array[greater_partition], array[index] = array[index], array[greater_partition] 
+        array[greater_partition], array[index] = array[index], array[greater_partition]
         greater_partition += 1
       end
     end
@@ -69,7 +69,7 @@ class Array
   end
   
   private
-  
+
   def merge_arrays(left, right)
     sorted = []
     until left.empty? || right.empty?

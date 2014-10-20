@@ -6,7 +6,7 @@ require 'benchmark'
 describe Array do
   it 'should insertion sort an array' do
     array = (1..10_000).to_a.shuffle
-    assert_equal (1..10_000).to_a, array.sorts(:merge)
+    assert_equal((1..10_000).to_a, array.sorts(:merge))
   end
 
   it 'should be benchmarked' do
