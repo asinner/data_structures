@@ -1,6 +1,12 @@
 # README
 This library contains a number of sorting algorithms
 
+## Radix Sort
+First get amount of digits in the biggest number.
+Iterate that many times through the array.
+Iterate up through the digit places and place into respective bucket.
+Reassign the array each time to the flattened bucket.
+Last pass will produce a sorted array
 
 ## Quick Sort
 This sort method picks a pivotal value out of the array. All values left of the pivot must be less than the pivot, while all values right of the pivot must be greater than the pivot. Recursively apply that logic to either side and you have the quick sort algorithm
