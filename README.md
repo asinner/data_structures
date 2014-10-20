@@ -1,6 +1,26 @@
 # README
 This library contains a number of sorting algorithms
 
+## Stack
+The stack data structure takes a linked list approach. The stack.rb file contains two levels: Stack & Frame. A stack knows only about the top most frame (the last frame pushed in). The stack object can pop off only the last frame
+
+## Linked List
+The linked list file contains two classes: List & Node. These two classes are structure to build a singly linked list.
+### Example usage
+```ruby
+list = List.new # => <ListObject>
+
+list.insert(Node.new('Andrew')) # => points the list head to the Andrew node
+
+list.insert(Node.new('Bob')) # => points list head to the Bob node
+
+list.search('Bob') # => Starts at the list head and searches node until a node with data == 'Bob' is found
+
+list.remove('Bob') # => Traverses list from head until the node with data == 'Bob' is found then removes it and updates connections
+
+list.to_s # => Prints a newline for each nodes data value
+```
+
 ## Radix Sort
 First get amount of digits in the biggest number.
 Iterate that many times through the array.
