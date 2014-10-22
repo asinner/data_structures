@@ -49,25 +49,25 @@ class Array
     right = array[mid, array.size - mid]
     merge_arrays(left.merge, right.merge)
   end
-  
+
   def radix
     array = *self
     max_iterations = array.max.to_s.length
-    
+
     buckets = []
     10.times { buckets << [] }
-    
+
     max_iterations.times do |i|
       array.each do |num|
         digit = (num / 10**i) % 10
         buckets[digit] << num
-      end    
+      end
       array = buckets.flatten
-      buckets.each { |b| b.clear }
+      buckets.each(&:clear)
     end
-    array 
+    array
   end
-  
+
   private
 
   def merge_arrays(left, right)

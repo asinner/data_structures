@@ -8,7 +8,7 @@ describe Stack do
     stack = Stack.new
     assert stack.push('Andrew'), 'Andrew'
   end
-  
+
   it 'should pop the most recent value off the stack' do
     stack = Stack.new
     stack.push('Andrew')

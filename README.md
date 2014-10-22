@@ -1,6 +1,36 @@
 # README
 This library contains a number of sorting algorithms
 
+## Queue
+The Queue data structure contains a set of nodes. This data structure has three methods:
+- `enqueue`: inserts a node into the set of the structure. Returns the value of the node.
+- `dequeue`: removes a node from structure in FIFO order. Returns the value of the removed node. Raises an EmptyQueueError if the Queue is nil.
+- `size`: reports the number of nodes in the queue. 
+
+The Queue data structure keep track of the first and last node using the `:head` and `:tail` accessors.
+
+### Example Usage
+Create the queue
+```ruby
+q = Queue.new
+
+n1 = Node.new('Andrew') # create a node
+n2 = Node.new('Ben')
+n3 = Node.new('Chris')
+
+q.enqueue(n1) # => insert a node
+q.enqueue(n2)
+q.enqueue(n3)
+
+q.head # => returns n1
+q.tail # => returns n3
+
+q.dequeue # => returns n1
+q.dequeue # => returns n2
+q.dequeue # => returns n2
+q.dequeue # => Raises EmptyQueueError
+```
+
 ## Stack
 The stack data structure takes a linked list approach. The stack.rb file contains two levels: Stack & Frame. A stack knows only about the top most frame (the last frame pushed in). The stack object can pop off only the last frame
 
