@@ -1,5 +1,15 @@
+require './lib/linked_list'
+
 class Queue
   class EmptyQueueError < RuntimeError
+  end
+  
+  class Node < Node
+    attr_accessor :data, :prev, :next
+
+    def initialize(data)
+      self.data = data
+    end
   end
 
   attr_accessor :head, :tail, :size
@@ -31,13 +41,5 @@ class Queue
     self.size -= 1
 
     node.data
-  end
-end
-
-class Node
-  attr_accessor :data, :prev, :next
-
-  def initialize(data)
-    self.data = data
   end
 end
