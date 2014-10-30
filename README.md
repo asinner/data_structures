@@ -1,6 +1,17 @@
 # README
 This library contains a number of sorting algorithms
 
+## Hash table
+The hash table data structure is used to store key value pairs. This is essentially how it works:
+
+- Create an array of fixed size [0..n]
+- Given a key, compute an index from a hash of that key
+ - In this library, the hash computes the sum of ordinal values of all characters in the string
+- Insert the key => value pair into the computed index
+
+This hash table library handles collisions by forming linked lists, and searching for the key, at each slot in the hash table.
+Reassignment is handled by the newest node being inserted at the head.
+
 ## Queue
 The Queue data structure contains a set of nodes. This data structure has three methods:
 - `enqueue`: inserts a node into the set of the structure. Returns the value of the node.
