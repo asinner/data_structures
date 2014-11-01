@@ -1,6 +1,13 @@
 # README
 This library contains a number of sorting algorithms
 
+## Binary Tree
+The binary tree is a data structure containing nodes, which have two children, and one parent node. Each node also contains a value.
+The spec for the binary tree contains testing three methods of depth-first traversal:
+- pre_order
+- in_order
+- post_order
+
 ## Hash table
 The hash table data structure is used to store key value pairs. This is essentially how it works:
 
