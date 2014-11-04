@@ -1,6 +1,15 @@
 class List
   attr_accessor :head, :size
 
+  class Node
+    attr_accessor :value, :next
+
+    def initialize(value = nil)
+      self.value = value
+      self.next = nil
+    end
+  end
+
   def initialize
     self.head = nil
     self.size = 0
@@ -37,14 +46,5 @@ class List
       puts c.value
       c = c.next
     end
-  end
-end
-
-class Node
-  attr_accessor :value, :next
-
-  def initialize(value = nil)
-    self.value = value
-    self.next = nil
   end
 end

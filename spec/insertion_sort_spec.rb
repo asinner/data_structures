@@ -11,15 +11,15 @@ describe Array do
 
   it 'should be benchmarked' do
     puts 'Insertion sort -----------------'
-    array = (1..10_000).to_a
+    array = (1..1_000).to_a
     puts 'Best case'
     puts Benchmark.measure { array.sorts(:insertion) }
 
-    array = (1..10_000).to_a.reverse
+    array = (1..1_000).to_a.reverse
     puts 'Worst case'
     puts Benchmark.measure { array.sorts(:insertion) }
 
-    array = (1..10_000).to_a.shuffle
+    array = (1..1_000).to_a.shuffle
     puts 'Random case'
     puts Benchmark.measure { array.sorts(:insertion) }
     puts '--------------------------------'
