@@ -21,12 +21,14 @@ class List
 
   def remove(node)
     return nil if head.nil?
-    (self.head = head.next) && (return node) if head == node
     c = head
-    until c.nil?
-      (c.next = node.next) && (return node) if c.next == node
+    while c
+      c.next = node.next if c.next == node
+      self.head = node.next if head == node
       c = c.next
+      return node
     end
+    nil
   end
 
   def to_s
