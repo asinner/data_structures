@@ -1,4 +1,4 @@
-class List
+class DoublyLinkedList
   attr_accessor :head, :size
 
   class Node < Struct.new(:value)
