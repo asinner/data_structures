@@ -1,6 +1,15 @@
 class List
   attr_accessor :head, :size
 
+  class Node
+    attr_accessor :value, :next
+
+    def initialize(value = nil)
+      self.value = value
+      self.next = nil
+    end
+  end
+
   def initialize
     self.head = nil
     self.size = 0
@@ -21,12 +30,14 @@ class List
 
   def remove(node)
     return nil if head.nil?
-    (self.head = head.next) && (return node) if head == node
     c = head
-    until c.nil?
-      (c.next = node.next) && (return node) if c.next == node
+    while c
+      c.next = node.next if c.next == node
+      self.head = node.next if head == node
       c = c.next
+      return node
     end
+    nil
   end
 
   def to_s
@@ -35,14 +46,5 @@ class List
       puts c.value
       c = c.next
     end
-  end
-end
-
-class Node
-  attr_accessor :value, :next
-
-  def initialize(value = nil)
-    self.value = value
-    self.next = nil
   end
 end
