@@ -4,41 +4,29 @@ class Array
   end
 
   def quick
-    array = *self
-    return array if array.size == 1
-    pivot = array[-1]
-    greater_partition = 0
-    array[0..-2].each_with_index do |num, index|
-      if num <= pivot
-        array[greater_partition], array[index] = array[index], array[greater_partition]
-        greater_partition += 1
+    return self if size == 1
+    gp = 0
+    self[0..-2].each_with_index do |num, index|
+      if num <= self[-1]
+        self[gp], self[index] = self[index], self[gp]
+        gp += 1
       end
     end
-    array[greater_partition], array[-1] = array[-1], array[greater_partition]
-    array = (array[0..(greater_partition - 1)].quick + array[greater_partition..-1].quick)
-    array
+    self[gp], self[-1] = self[-1], self[gp]
+    (self[0..(gp - 1)].quick + self[gp..-1].quick)
   end
 
   def insertion
     array = *self
-    i = 1
-    while i < array.size
-      if array[i] > array[i - 1]
-        i += 1
-        next
-      end
-      value = array[i]
+    return array if size == 1
+    array.each_with_index do |_num, i|
       j = i
-      while j > 0
-        if array[j] < array[j - 1]
-          array[j] = array[j - 1]
-          array[j - 1] = value
-        end
+      while j >  0
+        break if array[j] > array[j - 1]
+        array[j], array[j - 1] = array[j - 1], array[j]
         j -= 1
       end
-      i += 1
     end
-    array
   end
 
   def merge
@@ -52,15 +40,10 @@ class Array
 
   def radix
     array = *self
-    max_iterations = array.max.to_s.length
-
-    buckets = []
-    10.times { buckets << [] }
-
-    max_iterations.times do |i|
+    buckets = Array.new(10) { [] }
+    array.max.to_s.length.times do |i|
       array.each do |num|
-        digit = (num / 10**i) % 10
-        buckets[digit] << num
+        buckets[((num / 10**i) % 10)] << num
       end
       array = buckets.flatten
       buckets.each(&:clear)
