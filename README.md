@@ -1,6 +1,17 @@
 # README
 This library contains a number of sorting algorithms
 
+## Double linked list
+Thanks to @philwilt for the approach using the hash on deduplication
+The double linked list contains a list with nodes that are linked to the previous and next node.
+Perform the following methods on this list:
+
+- `add()`: adds a node to the head of the list
+- `delete(node)`: deletes the node from the list
+- `search(value)`: searches each node in the list by the given value. Returns an array of the nodes whose value matches the argument
+- `deduplicate()`: removes all duplicate values from the list
+- `deduplicate_vanilla()`: removes all duplicate values from the list without using an external data structure 
+
 ## Binary Tree
 The binary tree is a data structure containing nodes, which have two children, and one parent node. Each node also contains a value.
 The spec for the binary tree contains testing three methods of depth-first traversal:

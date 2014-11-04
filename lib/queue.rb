@@ -3,7 +3,7 @@ require './lib/linked_list'
 class Queue
   class EmptyQueueError < RuntimeError
   end
-  
+
   class Node < Node
     attr_accessor :data, :prev, :next
 
