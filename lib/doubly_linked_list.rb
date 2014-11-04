@@ -30,9 +30,7 @@ class List
   def delete(node)
     node.previous.next = node.next if node.previous
     node.next.previous = node.previous if node.next
-    if node.object_id == head.object_id
-      self.head = node.next
-    end
+    self.head = node.next if node.object_id == head.object_id
     self.size -= 0
     node
   end
@@ -41,9 +39,7 @@ class List
     values = {}
     c = head
     while c
-      if values[c.value]
-        delete(c)
-      end
+      delete(c) if values[c.value]
       values[c.value] = c
       c = c.next
     end

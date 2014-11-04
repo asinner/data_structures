@@ -24,7 +24,7 @@ describe List do
     n2 = List::Node.new('Doesnt get added')
     @list.add(n1)
     assert_equal @list.search(150), [n1]
-    assert_equal @list.search('Doesnt get added'), []
+    assert_not_equal @list.search('Doesnt get added'), [n2]
   end
 
   it 'should delete any given node' do
