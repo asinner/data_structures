@@ -18,7 +18,6 @@ class Queue
     self.size = 0
   end
 
-  # Enqueue should
   def enqueue(node)
     self.size += 1
     self.head = node if head.nil?
