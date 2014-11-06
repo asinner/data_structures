@@ -10,18 +10,18 @@ describe Array do
   end
 
   it 'should be benchmarked' do
-    puts 'Quick sort -----------------------------'
-    array = (1..1000).to_a
-    puts 'Best case'
-    puts Benchmark.measure { array.sorts(:quick) }
-
-    array = (1..1000).to_a.reverse
-    puts 'Worst case'
-    puts Benchmark.measure { array.sorts(:quick) }
-
-    array = (1..1000).to_a.shuffle
-    puts 'Random case'
-    puts Benchmark.measure { array.sorts(:quick) }
-    puts '-----------------------------------------'
+    # puts 'Quick sort -----------------------------'
+    # array = (1..1000).to_a
+    # puts 'Best case'
+    # puts Benchmark.measure { array.sorts(:quick) }
+    #
+    # array = (1..1000).to_a.reverse
+    # puts 'Worst case'
+    # puts Benchmark.measure { array.sorts(:quick) }
+    #
+    # array = (1..1000).to_a.shuffle
+    # puts 'Random case'
+    # puts Benchmark.measure { array.sorts(:quick) }
+    # puts '-----------------------------------------'
   end
 end
